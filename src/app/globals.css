@@ -26,8 +26,23 @@ body {
     rgb(var(--background-start-rgb)); */
 }
 
-@layer utilities {
+/* @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
-}
+} */
+
+/* .sidebar{
+  scrollbar-width: thin;
+  scrollbar-color: #999999 transparent;
+} */
+
+/* .sidebar::-webkit-scrollbar{
+  background-color: transparent;
+  width: 3px;
+} */
+
+/* .sidebar::-webkit-scrollbar-thumb{
+  scrollbar-color: #999999;
+  border-radius: 10px;
+} */

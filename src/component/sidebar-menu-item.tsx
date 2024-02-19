@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import React, { useState } from 'react'
 import { BsChevronRight } from 'react-icons/bs'
 
-const SidebarMenuItem = ({ item, toggleCollapse }: { item: SideNavItem, toggleCollapse: boolean }) => {
+const SideBarMenuItem = ({ item, toggleCollapse }: { item: SideNavItem, toggleCollapse: boolean }) => {
   const linkStyle = "flex items-center min-h-[40px] h-full text-[#6e768e] py-2 px-4 hover:text-white rounded-md transition duration-200"
   const activeLinkStyle = "rounded-md text-white light:text-black light:bg-[#efefef] bg-[#3a3f48]"
   const navMenuDropdownItem = " text-[#6e768e] py-2 px-4 hover:text-white rounded-md transition duration-200"
@@ -25,17 +25,17 @@ const SidebarMenuItem = ({ item, toggleCollapse }: { item: SideNavItem, toggleCo
               {
                 !toggleCollapse &&
                 <>
-                <span className='ml-3 leading-6 font-semibold'>{item.title}</span>
-                <BsChevronRight className={`${subMenuOpen?'rotate-90':''} ml-auto stroke-2 text-xs`} />
+                  <span className='ml-3 leading-6 font-semibold'>{item.title}</span>
+                  <BsChevronRight className={`${subMenuOpen ? 'rotate-90' : ''} ml-auto stroke-2 text-xs`} />
                 </>
               }
             </a>
-            {subMenuOpen && ! toggleCollapse && <div className='bg-[#3a3f48] border-l-4'>
+            {subMenuOpen && !toggleCollapse && <div className='bg-[#3a3f48] border-l-4'>
               <div className='grid gap-y-2 px-10 py-3 leading-5'>
                 {
-                  item.subMenuItems.map((subItem, index) => {
+                  item.subMenuItems.map((subItem, idx) => {
                     return (
-                      <Link key={index} href={subItem.path} className={`${navMenuDropdownItem} ${subItem.path === pathName ? 'text-white' : ''}`}>
+                      <Link key={idx} href={subItem.path} className={`${navMenuDropdownItem} ${subItem.path === pathName ? 'text-white' : ''}`}>
                         <span>{subItem.title}</span>
                       </Link>
                     )
@@ -54,4 +54,4 @@ const SidebarMenuItem = ({ item, toggleCollapse }: { item: SideNavItem, toggleCo
   )
 }
 
-export default SidebarMenuItem
+export default SideBarMenuItem

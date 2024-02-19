@@ -20,8 +20,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={karla.className}>
         <div className="flex min-h-screen">
-          <Header ></Header>
           <Sidebar ></Sidebar>
+          <Header ></Header>
           <PageWrapper children={children} > 
           </PageWrapper>
         </div>
